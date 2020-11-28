@@ -2,7 +2,7 @@ $(document).ready(function() {
   tf = window.tf;
 
   async function loadMobilenet() {
-    const modelWeigths = await tf.loadModel('https://raw.githubusercontent.com/iam-Shashank/snap_reuse/main/model/model.json');
+    const modelWeigths = await tf.loadModel('https://raw.githubusercontent.com/iam-Shashank/snap_reuse/main/../model/model.json');
     // const modelWeigths = await tf.loadModel('model/model.json');
 
     // console.log(modelWeigths);
@@ -105,7 +105,7 @@ async function inferImage(image){
   $("#results_title").text("Results");
   $("#first_place").text(buldLabel(response,  0) );
 
-  let url = 'https://raw.githubusercontent.com/iam-Shashank/snap_reuse/main/links.json';
+  let url = 'https://raw.githubusercontent.com/iam-Shashank/snap_reuse/main/../json/links.json';
   console.log(url);
   fetch(url)
   .then(res => res.json())
@@ -170,35 +170,35 @@ async function inferImage(image){
 
     if(response[0][0]=="cardboard"){
       console.log($("#item-icon-1")[0]);
-      $("#item-icon-1")[0].src="icons/0-box.png";
-      $("#item-icon-2")[0].src="icons/0-box.png";
-      $("#item-icon-3")[0].src="icons/0-box.png";
+      $("#item-icon-1")[0].src="../img/icons/0-box.png";
+      $("#item-icon-2")[0].src="../img/icons/0-box.png";
+      $("#item-icon-3")[0].src="../img/icons/0-box.png";
       
 
     } else if(response[0][0]=="glass bottle"){
-      $("#item-icon-1")[0].src="icons/1-soda-bottle.png";
-      $("#item-icon-2")[0].src="icons/1-soda-bottle.png";
-      $("#item-icon-3")[0].src="icons/1-soda-bottle.png";
+      $("#item-icon-1")[0].src="../img/icons/1-soda-bottle.png";
+      $("#item-icon-2")[0].src="../img/icons/1-soda-bottle.png";
+      $("#item-icon-3")[0].src="../img/icons/1-soda-bottle.png";
 
     } else if(response[0][0]=="glass jar"){
-      $("#item-icon-1")[0].src="icons/2-honey.png";
-      $("#item-icon-2")[0].src="icons/2-honey.png";
-      $("#item-icon-3")[0].src="icons/2-honey.png";
+      $("#item-icon-1")[0].src="../img/icons/2-honey.png";
+      $("#item-icon-2")[0].src="../img/icons/2-honey.png";
+      $("#item-icon-3")[0].src="../img/icons/2-honey.png";
 
     } else if(response[0][0]=="paper"){
-      $("#item-icon-1")[0].src="icons/3-document.png";
-      $("#item-icon-2")[0].src="icons/3-document.png";
-      $("#item-icon-3")[0].src="icons/3-document.png";
+      $("#item-icon-1")[0].src="../img/icons/3-document.png";
+      $("#item-icon-2")[0].src="../img/icons/3-document.png";
+      $("#item-icon-3")[0].src="../img/icons/3-document.png";
 
     } else if(response[0][0]=="plastic bottle"){
-      $("#item-icon-1")[0].src="icons/4-plastic-bottle.png";
-      $("#item-icon-2")[0].src="icons/4-plastic-bottle.png";
-      $("#item-icon-3")[0].src="icons/4-plastic-bottle.png";
+      $("#item-icon-1")[0].src="../img/icons/4-plastic-bottle.png";
+      $("#item-icon-2")[0].src="../img/icons/4-plastic-bottle.png";
+      $("#item-icon-3")[0].src="../img/icons/4-plastic-bottle.png";
 
     } else if(response[0][0]=="plastic container"){
-      $("#item-icon-1")[0].src="icons/5-container.png";
-      $("#item-icon-2")[0].src="icons/5-container.png";
-      $("#item-icon-3")[0].src="icons/5-container.png";
+      $("#item-icon-1")[0].src="../img/icons/5-container.png";
+      $("#item-icon-2")[0].src="../img/icons/5-container.png";
+      $("#item-icon-3")[0].src="../img/icons/5-container.png";
 
     } else {
 

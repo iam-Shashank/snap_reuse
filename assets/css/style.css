@@ -196,7 +196,7 @@ body {
   /*color: var(--green-grad);*/
 
   background-color: #ececec;
-  background-image: url("bg1.png");
+  background-image: url("../img/bg/bg1.png");
   background-repeat: no-repeat;
 
 }
