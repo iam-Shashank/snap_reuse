@@ -113,9 +113,6 @@ async function inferImage(image){
     console.log(response);
     console.log(response[0][0]);
     console.log(out[response[0][0]][0].title);
-    // $("#link1").text(out[response[0][0].toLowerCase()][0].title);
-    // $("#link2").text(out[response[0][0].toLowerCase()][1].title);
-    // $("#link3").text(out[response[0][0].toLowerCase()][2].title);
 
 
     var a = document.createElement('a');    
@@ -219,9 +216,9 @@ function buldLabel(response, index){
 
 
 var w,h;
-var canvas = document.querySelector("canvas");
-const context = canvas.getContext("2d");
-const video = document.querySelector('#myVidPlayer');
+canvas = document.querySelector("canvas");
+context = canvas.getContext("2d");
+video = document.querySelector('#myVidPlayer');
 canvas.style.display = "none";
 
 function startWebcam(){
@@ -274,94 +271,5 @@ async function snapshot(){
     track.stop();
   });
   video.srcObject=null;
-
-}
-
-
-//show list of instructables by clicking icon
-
-
-function fetchData(id){
-  console.log(id[5]);
-  var item='';
-  if(id[5]==0){
-
-    item="cardboard";
-    console.log("item:",item);
-    displayData(item);
-
-  } else if(id[5]==1){
-
-    item="glass bottle";
-    console.log("item:",item);
-    displayData(item);
-
-  } else if(id[5]==2){
-
-    item="glass bottle";
-    console.log("item:",item);
-    displayData(item);
-
-  } else if(id[5]==3){
-
-    item="paper";
-    console.log("item:",item);
-    displayData(item);
-
-  } else if(id[5]==4){
-
-    item="plastic bottle";
-    console.log("item:",item);
-    displayData(item);
-
-  } else if(id[5]==5){
-
-    item="plastic container";
-    console.log("item:",item);
-    displayData(item);
-
-  }
-
-
-}
-
-
-function displayData(item){
-
- let url = 'https://raw.githubusercontent.com/iam-Shashank/snap_reuse/main/assets/json/links.json';
-  console.log(url);
-  fetch(url)
-  .then(res => res.json())
-  .then((out) => {
-    console.log(item);
-    console.log(out[item].length);
-    console.log(out[item][0].title);
-
-
-    for (var i = 0; i < out[item].length; i++) { 
-    
-    // var a = document.createElement('a');    
-    // // Create the text node for anchor element. 
-    // var link = document.createTextNode(out[item][0].title); 
-    // // Append the text node to anchor element. 
-    // a.appendChild(link); 
-    // // Set the title. 
-    // a.title = out[item][0].title;  
-    // // Set the href property. 
-    // a.href = out[item][0].url;  
-    // // Append the anchor element to the body.
-    // var list=document.getElementById("link4");
-    // if (list.children.length){
-    //   list.removeChild(list.childNodes[0]);
-    // }
-    // list.appendChild(a); 
-
-
-    }
-
-
-
-  })
-  .catch(err => { throw err });
 
 }

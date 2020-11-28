@@ -8,9 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="assets/css/style.css" />
 
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0/css/swiper.min.css" />
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 
 <!--   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
@@ -31,177 +28,32 @@
         Just snap or upload picture of  waste items & get curated recommendations to reuse it! 
       </h2>
       </article>
+    
+
+
+    <div class="product-select">
       
+      <div class="tf-results">
 
-      <div class="product-select">
-
-        <div class="instructions">          
-          <h2>Select a demo image, choose file or snap a pic</h2>
-
-          <input type="file" id="userImageInput" onchange="startUserImage()" accept="image/x-png,image/jpg,image/jpeg" style="display:none; "/>
-          <button id="uploadbutton" class="Neurobutton" onclick="uploadImage()">
-            <i class="fa fa-upload"></i>
-
-
-          <button id="camerabutton" class="Neurobutton" onclick="startWebcam()">
-            <i class="fa fa-camera"></i>
-          </button>
-          <div id="camera" class="text-center" style="display:none;">
-            <video id="myVidPlayer" width="380px" height="380px" muted autoplay></video>
-            <button class="snap dot" onclick="snapshot()"></button>
-            <div class="mycanvas">
-              <!-- <h6>Captured snapshot</h6> -->
-              <canvas></canvas>
-            </div>
-          </div>
-          
-
-        </div>
-
-
-        <div class="product-gallery">
-
-            <div class="product-photo-main">
-              <div class="swiper-container">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="swiper-zoom-container">
-                      <img src="https://raw.githubusercontent.com/iam-Shashank/snap_reuse/main/assets/img/demo_img/cardboard149.jpg" crossOrigin="anonymous">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="swiper-zoom-container">
-                      <img src="https://raw.githubusercontent.com/iam-Shashank/snap_reuse/main/assets/img/demo_img/glass117.jpg" crossOrigin="anonymous">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="swiper-zoom-container">
-                      <img src="https://raw.githubusercontent.com/iam-Shashank/snap_reuse/main/assets/img/demo_img/glass9.jpg" crossOrigin="anonymous">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="swiper-zoom-container">
-                      <img src="https://raw.githubusercontent.com/iam-Shashank/snap_reuse/main/assets/img/demo_img/paper551.jpg" crossOrigin="anonymous">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="swiper-zoom-container">
-                      <img src="https://raw.githubusercontent.com/iam-Shashank/snap_reuse/main/assets/img/demo_img/plastic1.jpg" crossOrigin="anonymous">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="swiper-zoom-container">
-                      <img src="https://raw.githubusercontent.com/iam-Shashank/snap_reuse/main/assets/img/demo_img/plastic197.jpg" crossOrigin="anonymous">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <img id="imageFromUser">
-                    <div id="textInfoSendImage">
-                      Use the menu on the right to use a photo from your computer!
-                    </div>
-                  </div>
-                </div>
-                <!-- <div class="swiper-pagination"></div> -->
-              </div>
-            </div>
-
-            <div class="product-photos-side">
-              <div class="swiper-container">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="swiper-zoom-container">
-                      <img src="https://raw.githubusercontent.com/iam-Shashank/snap_reuse/main/assets/img/demo_img/cardboard149.jpg" crossOrigin="anonymous">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="swiper-zoom-container">
-                      <img src="https://raw.githubusercontent.com/iam-Shashank/snap_reuse/main/assets/img/demo_img/glass117.jpg" crossOrigin="anonymous">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="swiper-zoom-container">
-                      <img src="https://raw.githubusercontent.com/iam-Shashank/snap_reuse/main/assets/img/demo_img/glass9.jpg" crossOrigin="anonymous">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="swiper-zoom-container">
-                      <img src="https://raw.githubusercontent.com/iam-Shashank/snap_reuse/main/assets/img/demo_img/paper551.jpg" crossOrigin="anonymous">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="swiper-zoom-container">
-                      <img src="https://raw.githubusercontent.com/iam-Shashank/snap_reuse/main/assets/img/demo_img/plastic1.jpg" crossOrigin="anonymous">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="swiper-zoom-container">
-                      <img src="https://raw.githubusercontent.com/iam-Shashank/snap_reuse/main/assets/img/demo_img/plastic197.jpg" crossOrigin="anonymous">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="swiper-zoom-container">
-                      <img src="https://adrianodennanni.github.io/furniture_classifier/upload_icon.png" style="padding:15px;">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>     
-        </div>   
+        <h1 id="results_title">Explore our curated instructables</h1>
       </div>
 
-      <div class="info-display">
-          <div class="tf-results">
+      <div id="explore-all">
 
-            <h1 id="results_title">Processing...</h1>
-            <h2 id="first_place"></h2>
-          </div>
+          <img id="icon-0" class="all-icons" src="assets/img/icons/0-box.png" alt="" onclick="fetchData(this.id);" >
+          <img id="icon-1" class="all-icons" src="assets/img/icons/1-soda-bottle.png" alt="" onclick="fetchData(this.id);" >
+          <img id="icon-2" class="all-icons" src="assets/img/icons/2-honey.png" alt="" onclick="fetchData(this.id);" >
+          <img id="icon-3" class="all-icons" src="assets/img/icons/3-document.png" alt="" onclick="fetchData(this.id);" >
+          <img id="icon-4" class="all-icons" src="assets/img/icons/4-plastic-bottle.png" alt="" onclick="fetchData(this.id);" >
+          <img id="icon-5" class="all-icons" src="assets/img/icons/5-container.png" alt="" onclick="fetchData(this.id);" >
 
-          <div class="recommend">
-            <h1 id="results_title">Here are some recommendations to reuse </h1>
-            
-            <div class="link-shown">
-                <img id="item-icon-1" src="" alt="">
-                <h2 id="link1"></h2>
-            </div> 
+        <div id="parent-link">
 
-            <div class="link-shown">
-              <img id="item-icon-2" src="" alt="">
-              <h2 id="link2"></h2>
-            </div>    
-
-            <div class="link-shown">
-              <img id="item-icon-3" src="" alt="">
-              <h2 id="link3"></h2>
-            </div> 
-            
-          </div>
+        </div>
+        
       </div>
 
-
-
-        <div class="product-select">
-          <div class="tf-results">
-
-            <h1 id="results_title">Explore our curated instructables</h1>
-          </div>
-
-          <div class="recommend">
-
-              <img id="icon-0" class="all-icons" src="assets/img/icons/0-box.png" alt="" onclick="fetchData(this.id);" >
-              <img id="icon-1" class="all-icons" src="assets/img/icons/1-soda-bottle.png" alt="" onclick="fetchData(this.id);" >
-              <img id="icon-2" class="all-icons" src="assets/img/icons/2-honey.png" alt="" onclick="fetchData(this.id);" >
-              <img id="icon-3" class="all-icons" src="assets/img/icons/3-document.png" alt="" onclick="fetchData(this.id);" >
-              <img id="icon-4" class="all-icons" src="assets/img/icons/4-plastic-bottle.png" alt="" onclick="fetchData(this.id);" >
-              <img id="icon-5" class="all-icons" src="assets/img/icons/5-container.png" alt="" onclick="fetchData(this.id);" >
-   
-            
-            <div class="link-shown">
-                <h2 id="link4"></h2>
-            </div> 
-
-            
-          </div>
-        </div>
+    </div>
 
 
 
@@ -213,16 +65,10 @@
 </body>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0/js/swiper.min.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tensorflow/0.14.2/tf.min.js"></script>
 
 <!--   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
 
-  <script src="assets/js/script.js"></script>
-
-  <script src="assets/js/labels.js"></script>
-
+  <script src="assets/js/browse.js"></script>
 
 
 </html>
