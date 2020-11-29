@@ -625,6 +625,9 @@ a {
 .feature-card {
 	width: 320px
 }
+.feature-card2 {
+	width: 65%;
+}
 .text-white {
 	color: #fff
 }

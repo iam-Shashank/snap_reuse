@@ -26,6 +26,10 @@
   filter: blur(25px);
 }
 */
+
+
+
+__________nav bar above_________
 .product-select {
   margin:3em 1em;
   text-decoration: none;
@@ -65,6 +69,34 @@ box-shadow:  27px 27px 54px #cdcfd1,
   color:#6c6c6c;
   box-shadow: 0 0 0 transparent, 0 0 0 transparent, inset -18px -18px 30px #fff, inset 18px 18px 30px #d1d9e6;
 }
+
+.icon-snap {
+  width: 50px;
+  height: 50px;
+  margin:0.5em;
+  /*padding: 0.5em;*/
+  font-family: 'Open Sans', Arial, sans-serif;
+  background: #ecf0f3;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 32px;
+  font-weight: 900;
+  color: #b9c2d4;
+  text-shadow: -2px -2px 5px #fff, 2px 2px 5px #d1d9e6;
+  box-shadow: -18px -18px 30px #fff, 18px 18px 30px #d1d9e6, inset 0 0 0 transparent, inset  0 0 0 transparent;
+  transition: all 0.3s ease-out;
+}
+
+.icon-snap:hover {
+  color:#6c6c6c;
+  box-shadow: 0 0 0 transparent, 0 0 0 transparent, inset -18px -18px 30px #fff, inset 18px 18px 30px #d1d9e6;
+}
+
+.icon-snap:focus{
+  outline:none;
+}
+
 
 .snap{
   position: absolute;
