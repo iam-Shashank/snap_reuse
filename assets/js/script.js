@@ -60,15 +60,14 @@ function uploadImage(){
 }
 
 async function startUserImage() {
-  $("#textInfoSendImage").remove();
+  // $("#textInfoSendImage").remove();
   var imgDataURL = window.URL.createObjectURL(document.getElementById('userImageInput').files[0]);
   $("#imageFromUser")[0].src = imgDataURL;
-  if(swiperProduct.activeIndex == 12){
-    await new Promise(resolve => setTimeout(resolve, 500));
-    inferImage($("#imageFromUser")[0]);
-  } else{
+  if(swiperProduct.activeIndex != 12){
     swiperProduct.slideTo(12);
-  };
+  }
+  await new Promise(resolve => setTimeout(resolve, 500));
+  inferImage($("#imageFromUser")[0]);
 };
 
 async function inferImage(image){
@@ -78,6 +77,7 @@ async function inferImage(image){
   $("#second_place").text("");
 
   // Deep Learning Inference
+  console.log(image.naturalWidth,image.naturalHeight);
   ctx.drawImage(image, 0, 0, image.naturalWidth, image.naturalHeight, 0, 0, 224, 224);
   imageData = ctx.getImageData(0, 0, 224, 224);
   imagePixels = tf.fromPixels(imageData).expandDims(0).toFloat().div(tf.scalar(255));
@@ -103,7 +103,7 @@ async function inferImage(image){
 
   // Print top 2 on html elements
   $("#results_title").text("Results");
-  $("#first_place").text(buldLabel(response,  0) );
+  $("#first_place").text(buildLabel(response,  0) );
 
   let url = 'https://raw.githubusercontent.com/iam-Shashank/snap_reuse/main/assets/json/links.json';
   console.log(url);
@@ -210,8 +210,8 @@ async function inferImage(image){
 
 //add error handling for other than those 5 tags.
 
-function buldLabel(response, index){
-  return response[index][0]+" detected with "+response[index][1].toFixed(4)*100+"% accuracy";
+function buildLabel(response, index){
+  return response[index][0]+" detected with "+(response[index][1]*100).toFixed(2)+"% accuracy";
 }
 
 
@@ -222,7 +222,7 @@ video = document.querySelector('#myVidPlayer');
 canvas.style.display = "none";
 
 function startWebcam(){
-window.navigator.mediaDevices.getUserMedia({video:{width:300,height:300}})
+window.navigator.mediaDevices.getUserMedia({video:{width:300,height:150}})
 .then(stream=>{
   video.srcObject=stream;
   $('#camera')[0].style.display='block';
@@ -251,14 +251,17 @@ async function snapshot(){
   $('#uploadbutton')[0].style.display='inline';
   context.fillRect(0, 0, w, h);
   context.drawImage(video, 0, 0, w, h);
-  console.log(w,h,video);
-  inferImage(video);
+  // inferImage(video);
   canvas.style.display = "block";
   // console.log("context canvas",context.canvas.toDataURL("image/png"));
 
+  if (swiperProduct.activeIndex!=12){
+    swiperProduct.slideTo(12);
+  }
   $("#imageFromUser")[0].src = context.canvas.toDataURL("image/png");
     await new Promise(resolve => setTimeout(resolve, 500));
     inferImage($("#imageFromUser")[0]);
+
   // if(swiperProduct.activeIndex == 12){
   //   await new Promise(resolve => setTimeout(resolve, 500));
   //   inferImage($("#imageFromUser")[0]);
