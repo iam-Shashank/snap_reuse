@@ -222,7 +222,7 @@ video = document.querySelector('#myVidPlayer');
 canvas.style.display = "none";
 
 function startWebcam(){
-window.navigator.mediaDevices.getUserMedia({video:true})
+window.navigator.mediaDevices.getUserMedia({video:{width:300,height:300}})
 .then(stream=>{
   video.srcObject=stream;
   $('#camera')[0].style.display='block';
